@@ -8,9 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -o animation"
+    "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://inspire12.github.io/animation",
+  "homepage": "inspire12-animation.github.io",
   "private": true,
   "keywords": [],
   "author": "",
