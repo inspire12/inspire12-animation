@@ -10,7 +10,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://yeonghakseo.github.io/inspire12-animation",
+  "homepage": "https://inspire12.github.io/animation",
   "private": true,
   "keywords": [],
   "author": "",
