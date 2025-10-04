@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/animation/',
+  base: '/inspire12-animation/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets'
