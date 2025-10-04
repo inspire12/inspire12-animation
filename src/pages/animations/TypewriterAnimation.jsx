@@ -95,7 +95,7 @@ const TypewriterAnimation = () => {
           <div className="example-item">
             <h3>Blinking Cursor</h3>
             <div className="typewriter-text">
-              Text with cursor<span className="blinking-cursor">_</span>
+              Text with cursor<span className="cursor">_</span>
             </div>
           </div>
           

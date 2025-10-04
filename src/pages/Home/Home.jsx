@@ -101,6 +101,41 @@ const Home = () => {
       description: '3차원 변환과 원근감을 활용한 애니메이션입니다.',
       path: '/animation/transform3d',
       preview: <div className="preview-element transform3d-preview"></div>
+    },
+    {
+      id: 'hover-effects',
+      title: 'Hover Effects Animation',
+      description: '마우스 호버 시 발생하는 인터랙티브 애니메이션입니다.',
+      path: '/animation/hover-effects',
+      preview: <div className="preview-element hover-effects-preview"></div>
+    },
+    {
+      id: 'morph',
+      title: 'Morph Animation',
+      description: '도형과 아이콘의 변형 애니메이션입니다.',
+      path: '/animation/morph',
+      preview: <div className="preview-element morph-preview"></div>
+    },
+    {
+      id: 'particle',
+      title: 'Particle Animation',
+      description: '다양한 파티클 시스템 효과 애니메이션입니다.',
+      path: '/animation/particle',
+      preview: <div className="preview-element particle-preview"></div>
+    },
+    {
+      id: 'parallax',
+      title: 'Parallax Animation',
+      description: '스크롤 기반 시차 효과와 깊이감 애니메이션입니다.',
+      path: '/animation/parallax',
+      preview: <div className="preview-element parallax-preview"></div>
+    },
+    {
+      id: 'celebration',
+      title: 'Celebration Animation',
+      description: '축하와 성공을 표현하는 다양한 애니메이션 효과입니다.',
+      path: '/animation/celebration',
+      preview: <div className="preview-element celebration-preview"></div>
     }
   ]
 

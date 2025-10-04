@@ -16,6 +16,11 @@ import LoadingAnimation from './pages/animations/LoadingAnimation'
 import TextEffectsAnimation from './pages/animations/TextEffectsAnimation'
 import GlitchAnimation from './pages/animations/GlitchAnimation'
 import Transform3DAnimation from './pages/animations/Transform3DAnimation'
+import HoverEffectsAnimation from './pages/animations/HoverEffectsAnimation'
+import MorphAnimation from './pages/animations/MorphAnimation'
+import ParticleAnimation from './pages/animations/ParticleAnimation'
+import ParallaxAnimation from './pages/animations/ParallaxAnimation'
+import CelebrationAnimation from './pages/animations/CelebrationAnimation'
 
 function App() {
   return (
@@ -36,6 +41,11 @@ function App() {
         <Route path="/animation/text-effects" element={<TextEffectsAnimation />} />
         <Route path="/animation/glitch" element={<GlitchAnimation />} />
         <Route path="/animation/transform3d" element={<Transform3DAnimation />} />
+        <Route path="/animation/hover-effects" element={<HoverEffectsAnimation />} />
+        <Route path="/animation/morph" element={<MorphAnimation />} />
+        <Route path="/animation/particle" element={<ParticleAnimation />} />
+        <Route path="/animation/parallax" element={<ParallaxAnimation />} />
+        <Route path="/animation/celebration" element={<CelebrationAnimation />} />
       </Routes>
     </Layout>
   )

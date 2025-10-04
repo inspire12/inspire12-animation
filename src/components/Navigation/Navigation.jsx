@@ -20,7 +20,12 @@ const Navigation = () => {
     { path: '/animation/loading', label: 'Loading' },
     { path: '/animation/text-effects', label: 'Text Effects' },
     { path: '/animation/glitch', label: 'Glitch' },
-    { path: '/animation/transform3d', label: '3D Transform' }
+    { path: '/animation/transform3d', label: '3D Transform' },
+    { path: '/animation/hover-effects', label: 'Hover Effects' },
+    { path: '/animation/morph', label: 'Morph' },
+    { path: '/animation/particle', label: 'Particle' },
+    { path: '/animation/parallax', label: 'Parallax' },
+    { path: '/animation/celebration', label: 'Celebration' }
   ]
 
   const isAnimationActive = animationItems.some(item => item.path === location.pathname)

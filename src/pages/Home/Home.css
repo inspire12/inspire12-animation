@@ -88,6 +88,26 @@
   animation: transform3dPreview 4s linear infinite;
 }
 
+.hover-effects-preview {
+  animation: hoverEffectsPreview 2s ease-in-out infinite;
+}
+
+.morph-preview {
+  animation: morphPreview 3s ease-in-out infinite;
+}
+
+.particle-preview {
+  animation: particlePreview 2s ease-in-out infinite;
+}
+
+.parallax-preview {
+  animation: parallaxPreview 4s ease-in-out infinite;
+}
+
+.celebration-preview {
+  animation: celebrationPreview 3s ease-in-out infinite;
+}
+
 @keyframes fadeInOut {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
@@ -195,6 +215,95 @@
   50% { transform: rotateX(90deg) rotateY(90deg); }
   75% { transform: rotateX(0deg) rotateY(90deg); }
   100% { transform: rotateX(0deg) rotateY(360deg); }
+}
+
+@keyframes hoverEffectsPreview {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes morphPreview {
+  0%, 100% { 
+    border-radius: 50%; 
+    transform: rotate(0deg);
+  }
+  25% { 
+    border-radius: 25%; 
+    transform: rotate(45deg);
+  }
+  50% { 
+    border-radius: 0%; 
+    transform: rotate(90deg);
+  }
+  75% { 
+    border-radius: 25%; 
+    transform: rotate(135deg);
+  }
+}
+
+@keyframes particlePreview {
+  0%, 100% { 
+    box-shadow: 
+      0 0 5px #4ecdc4,
+      2px 2px 5px #ff6b6b,
+      -2px -2px 5px #45b7d1;
+  }
+  50% { 
+    box-shadow: 
+      0 0 15px #4ecdc4,
+      5px 5px 15px #ff6b6b,
+      -5px -5px 15px #45b7d1;
+  }
+}
+
+@keyframes parallaxPreview {
+  0%, 100% { 
+    transform: translateY(0);
+    box-shadow: 0 0 10px rgba(78, 205, 196, 0.3);
+  }
+  25% { 
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(78, 205, 196, 0.5);
+  }
+  50% { 
+    transform: translateY(0);
+    box-shadow: 0 0 10px rgba(78, 205, 196, 0.3);
+  }
+  75% { 
+    transform: translateY(3px);
+    box-shadow: 0 -5px 15px rgba(78, 205, 196, 0.5);
+  }
+}
+
+@keyframes celebrationPreview {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 
+      0 0 10px #ff6b6b,
+      0 0 20px #4ecdc4,
+      0 0 30px #45b7d1;
+  }
+  25% { 
+    transform: scale(1.1);
+    box-shadow: 
+      0 0 15px #ff6b6b,
+      5px 5px 25px #4ecdc4,
+      -5px -5px 25px #45b7d1;
+  }
+  50% { 
+    transform: scale(1.05);
+    box-shadow: 
+      0 0 20px #ff6b6b,
+      10px 0 30px #4ecdc4,
+      -10px 0 30px #45b7d1;
+  }
+  75% { 
+    transform: scale(1.15);
+    box-shadow: 
+      0 0 25px #ff6b6b,
+      0 10px 35px #4ecdc4,
+      0 -10px 35px #45b7d1;
+  }
 }
 
 @media (max-width: 768px) {

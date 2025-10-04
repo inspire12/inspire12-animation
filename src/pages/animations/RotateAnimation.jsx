@@ -1,8 +1,58 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import './AnimationPage.css'
 
 const RotateAnimation = () => {
   const [isRotating, setIsRotating] = useState(false)
+  const [currentRotation, setCurrentRotation] = useState(0)
+  const elementRef = useRef(null)
+  const animationIdRef = useRef(null)
+  const startTimeRef = useRef(null)
+
+  useEffect(() => {
+    if (isRotating) {
+      startTimeRef.current = Date.now()
+      const animate = () => {
+        const elapsed = Date.now() - startTimeRef.current
+        const rotationSpeed = 180 // degrees per second
+        const newRotation = currentRotation + (elapsed / 1000) * rotationSpeed
+        
+        if (elementRef.current) {
+          elementRef.current.style.transform = `rotate(${newRotation % 360}deg)`
+        }
+        
+        if (isRotating) {
+          animationIdRef.current = requestAnimationFrame(animate)
+        }
+      }
+      animationIdRef.current = requestAnimationFrame(animate)
+    } else {
+      // 멈출 때 현재 각도를 저장
+      if (elementRef.current) {
+        const computedStyle = window.getComputedStyle(elementRef.current)
+        const matrix = computedStyle.transform
+        if (matrix !== 'none') {
+          const values = matrix.split('(')[1].split(')')[0].split(',')
+          const a = values[0]
+          const b = values[1]
+          const angle = Math.round(Math.atan2(b, a) * (180/Math.PI))
+          setCurrentRotation(angle < 0 ? angle + 360 : angle)
+        }
+      }
+      if (animationIdRef.current) {
+        cancelAnimationFrame(animationIdRef.current)
+      }
+    }
+
+    return () => {
+      if (animationIdRef.current) {
+        cancelAnimationFrame(animationIdRef.current)
+      }
+    }
+  }, [isRotating, currentRotation])
+
+  const handleRotationToggle = () => {
+    setIsRotating(!isRotating)
+  }
 
   return (
     <div className="animation-page">
@@ -16,16 +66,34 @@ const RotateAnimation = () => {
         <div className="demo-controls">
           <button 
             className="demo-button"
-            onClick={() => setIsRotating(!isRotating)}
+            onClick={handleRotationToggle}
           >
             {isRotating ? 'Stop Rotation' : 'Start Rotation'}
+          </button>
+          <button 
+            className="demo-button"
+            onClick={() => {
+              setCurrentRotation(0)
+              if (elementRef.current) {
+                elementRef.current.style.transform = 'rotate(0deg)'
+              }
+            }}
+          >
+            Reset
           </button>
         </div>
         
         <div className="demo-area">
-          <div className={`rotate-element ${isRotating ? 'rotating' : ''}`}>
+          <div 
+            ref={elementRef}
+            className="rotate-element"
+            style={{ transform: `rotate(${currentRotation}deg)` }}
+          >
             ⚡
           </div>
+          <p style={{ marginTop: '10px', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)' }}>
+            Current angle: {Math.round(currentRotation)}°
+          </p>
         </div>
       </div>
 
