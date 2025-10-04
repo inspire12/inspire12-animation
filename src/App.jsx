@@ -21,6 +21,7 @@ import MorphAnimation from './pages/animations/MorphAnimation'
 import ParticleAnimation from './pages/animations/ParticleAnimation'
 import ParallaxAnimation from './pages/animations/ParallaxAnimation'
 import CelebrationAnimation from './pages/animations/CelebrationAnimation'
+import CursorAnimation from './pages/animations/CursorAnimation'
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route path="/animation/particle" element={<ParticleAnimation />} />
         <Route path="/animation/parallax" element={<ParallaxAnimation />} />
         <Route path="/animation/celebration" element={<CelebrationAnimation />} />
+        <Route path="/animation/cursor" element={<CursorAnimation />} />
       </Routes>
     </Layout>
   )

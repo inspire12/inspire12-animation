@@ -25,7 +25,8 @@ const Navigation = () => {
     { path: '/animation/morph', label: 'Morph' },
     { path: '/animation/particle', label: 'Particle' },
     { path: '/animation/parallax', label: 'Parallax' },
-    { path: '/animation/celebration', label: 'Celebration' }
+    { path: '/animation/celebration', label: 'Celebration' },
+    { path: '/animation/cursor', label: 'Cursor' }
   ]
 
   const isAnimationActive = animationItems.some(item => item.path === location.pathname)

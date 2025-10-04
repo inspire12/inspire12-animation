@@ -136,6 +136,13 @@ const Home = () => {
       description: '축하와 성공을 표현하는 다양한 애니메이션 효과입니다.',
       path: '/animation/celebration',
       preview: <div className="preview-element celebration-preview"></div>
+    },
+    {
+      id: 'cursor',
+      title: 'Cursor Animation',
+      description: '마우스 커서의 다양한 애니메이션 효과를 보여줍니다.',
+      path: '/animation/cursor',
+      preview: <div className="preview-element cursor-preview"></div>
     }
   ]
 
